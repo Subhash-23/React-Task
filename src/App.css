@@ -169,7 +169,7 @@ input:focus {
 
 
 main {
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 

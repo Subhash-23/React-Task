@@ -1,11 +1,12 @@
 import React from 'react';
 import { GiSettingsKnobs } from "react-icons/gi";
 import "../Styles/Products.css";
+import Card from '../Components/Card';
 
 const Products = () => {
   return (
    <>
-      {/* <div className="filterSection">
+      <div className="filterSection">
          <div>
             <div className='fLeft'>
                <GiSettingsKnobs className='filterIcon'/>
@@ -22,9 +23,9 @@ const Products = () => {
                </select>
             </div>
          </div>
-      </div> */}
+      </div>
       <div className="mainSection">
-         asdf
+         <Card />
       </div> 
    </>
   )
