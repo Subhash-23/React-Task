@@ -1,7 +1,7 @@
 .star-rating {
   display: inline-flex;
   align-items: center;
-  font-size: 20px;
+  /* font-size: 20px; */
   color: #f8c145;
 }
 
@@ -15,18 +15,10 @@
 
 .star.half {
   color: #f8c145;
-  position: relative;
-}
-
-.star.half::after {
-  content: '\u2606';
-  position: absolute;
-  left: 0;
-  color: #ddd;
 }
 
 .star.empty {
-  color: #ddd;
+  color: #6a6a6a;
 }
 
 .rating-count {

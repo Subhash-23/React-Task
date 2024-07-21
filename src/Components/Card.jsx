@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Card = () => {
    const { productData, loading, error } = useContext(ProductContext);
+   if (loading) return <p className='loadingText'>Products are loading....</p>;
+   if (error) return <p className='errorText'>Error: {error.message}</p>;
   return (
     <div className="product-grid">
       {productData.map(product => (
@@ -17,10 +19,10 @@ const Card = () => {
                <StarRating rating={product.rating} count={product.reviews.length} />
             </div>
             <p className='product-detail'>
-               <span className="old-price">${product.price.toFixed(2)}</span>
                <span className="new-price">
                ${(product.price * (1 - product.discountPercentage / 100)).toFixed(2)}
                </span>
+               <span className="old-price">${product.price.toFixed(2)}</span>
             </p>
          </Link>
       </div>

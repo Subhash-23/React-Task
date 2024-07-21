@@ -15,7 +15,7 @@ const Footer = () => {
             <h1>LOGO</h1>
             <h2>Download the app for easy order.</h2>
             <p>Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit.</p>
-            <img src="footer icons.PNG" alt="Footer Icons" />
+            <img src="footericons.PNG" alt="Footer Icons" />
           </div>
           <div className="mRight">
             <div className="abtUs1">
@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
         <div className="fLastBar">
           <p>Copyright © All Right reserved.</p>
-          <img src="card icons.PNG" alt="Card Logo" />
+          <img src="cardicons.PNG" alt="Card Logo" />
         </div>
     </div>
   )

@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { MdLocalPhone } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { FiUser } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdCart } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cartItems } = useContext(CartContext);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -40,7 +42,6 @@ const NavBar = () => {
               <Link className='menuLinks' to={item.link}>{item.name}</Link>
             </li>
           ))}
-          <div className="sRightMirror"></div>
           </div>
         </div>
         <div className='thirdBar'>
@@ -76,8 +77,11 @@ const NavBar = () => {
           <div className="tUserContainer">
             <FiUser className='userIcon'/>
             <IoMdHeartEmpty className='wishlistIcon'/>
-            <Link to='/shopping-cart'>
+            <Link className='cartContainer' to='/shopping-cart'>
               <IoMdCart className='cartIcon'/>
+              <div className="cartCount">
+                {cartItems.length}
+              </div>
             </Link>
           </div>
         </div>

@@ -5,28 +5,31 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Products from './Pages/Products';
 import ShoppingCart from './Pages/ShoppingCart';
 import { ProductProvider } from './context/ProductContext';
+import { CartProvider } from './context/CartContext';
 import ProductDetails from './Pages/ProductDetails';
 
 function App() {
   return (
     <ProductProvider>
-      <Router>
-        <header>
-          <NavBar/>
-        </header>
+      <CartProvider>
+        <Router>
+          <header>
+            <NavBar/>
+          </header>
 
-        <main>
-          <Routes>
-            <Route path="/" element={<Products />} />
-            <Route path="/shopping-cart" element={<ShoppingCart />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-          </Routes>
-        </main>
+          <main>
+            <Routes>
+              <Route path="/" element={<Products />} />
+              <Route path="/shopping-cart" element={<ShoppingCart />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
+            </Routes>
+          </main>
 
-        <footer>
-          <Footer />
-        </footer>
-      </Router>
+          <footer>
+            <Footer />
+          </footer>
+        </Router>
+      </CartProvider>
     </ProductProvider>
   )
 }

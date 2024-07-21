@@ -8,11 +8,11 @@ const StarRating = ({ rating, count }) => {
 
   return (
     <div className="star-rating">
-      {Array(fullStars).fill().map((i) => (
+      {Array(fullStars).fill().map((key, i) => (
         <span key={`full-${i}`} className="star full">&#9733;</span>
       ))}
       {hasHalfStar && <span className="star half">&#9733;</span>}
-      {Array(emptyStars).fill().map((i) => (
+      {Array(emptyStars).fill().map((key, i) => (
         <span key={`empty-${i}`} className="star empty">&#9734;</span>
       ))}
       <span className="rating-count">({count})</span>

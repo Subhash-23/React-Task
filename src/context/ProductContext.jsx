@@ -14,8 +14,8 @@ export const ProductProvider = ({ children }) => {
         setProductData(response.data.products);
         setLoading(false);
       })
-      .catch(error => {
-        setError(error);
+      .catch(() => {
+        setError("Unable to load the data :(");
         setLoading(false);
       });
   }, []);
