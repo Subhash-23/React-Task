@@ -42,6 +42,7 @@ const NavBar = () => {
               <Link className='menuLinks' to={item.link}>{item.name}</Link>
             </li>
           ))}
+          <div className="sRightMirror"></div>
           </div>
         </div>
         <div className='thirdBar'>
@@ -71,17 +72,17 @@ const NavBar = () => {
               <FiUser className='userIcon'/>
               <IoMdHeartEmpty className='wishlistIcon'/>
               <IoMdCart className='cartIcon'/>  
+              {/* <div className="cartCount">
+                {cartItems.length}
+              </div> */}
             </div>
           </div>
 
           <div className="tUserContainer">
             <FiUser className='userIcon'/>
             <IoMdHeartEmpty className='wishlistIcon'/>
-            <Link className='cartContainer' to='/shopping-cart'>
+            <Link to='/shopping-cart'>
               <IoMdCart className='cartIcon'/>
-              <div className="cartCount">
-                {cartItems.length}
-              </div>
             </Link>
           </div>
         </div>
