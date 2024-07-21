@@ -5,7 +5,7 @@ import "../Styles/Products.css";
 const Products = () => {
   return (
    <>
-      <div className="filterSection">
+      {/* <div className="filterSection">
          <div>
             <div className='fLeft'>
                <GiSettingsKnobs className='filterIcon'/>
@@ -22,7 +22,7 @@ const Products = () => {
                </select>
             </div>
          </div>
-      </div>
+      </div> */}
       <div className="mainSection">
          asdf
       </div> 
