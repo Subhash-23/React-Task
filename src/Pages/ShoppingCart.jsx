@@ -7,13 +7,18 @@ import { CiEdit } from "react-icons/ci";
 const ShoppingCart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
 
+  const calculateTotalCost = () => {
+    return cartItems.reduce((total, item) => {
+      return total + ((item.price * (1 - item.discountPercentage / 100)) * item.quantity);
+    }, 0).toFixed(2);
+  };
+
   if (cartItems.length === 0) {
     return <p className="empty-cart">Your cart is empty.</p>;
   }
 
   return (
     <div className="cartContainer">
-
       <div className="shopping-cart">
         <div className="cartTitle">
           <h1>Shopping Cart</h1>
@@ -60,6 +65,41 @@ const ShoppingCart = () => {
               ))}
             </tbody>
           </table>
+        </div>
+      </div>
+      <div className="order-summary-container">
+        <div className="order-summary">
+          <div className="order-left">
+            <h2>Order Summary</h2>
+            <hr />
+            <div className="order-item">
+              <label>SHIPPING</label>
+              <input type="text" placeholder="Enter shipping details" />
+            </div>
+            <div className="order-item">
+              <label>PROMO</label>
+              <input type="text" placeholder="Enter promo code" />
+              <div className="buttonDiv">
+                <button className="apply-button">Apply</button>
+              </div>
+            </div>
+          </div>
+          <div className="order-details">
+            <div className="detail-row">
+              <span>Total Item</span>
+              <span>{cartItems?.length}</span>
+            </div>
+            <div className="detail-row">
+              <span>Sub Total</span>
+              <span>$ {calculateTotalCost()}</span>
+            </div>
+            <hr />
+            <div className="detail-row">
+              <span>Total Cost</span>
+              <span>$ {calculateTotalCost()}</span>
+            </div>
+            <button className="checkout-button">CheckOut</button>
+          </div>
         </div>
       </div>
     </div>

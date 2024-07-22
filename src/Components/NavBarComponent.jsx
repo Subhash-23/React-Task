@@ -11,6 +11,12 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cartItems } = useContext(CartContext);
 
+  const calculateTotalCost = () => {
+    return cartItems.reduce((total, item) => {
+      return total + ((item.price * (1 - item.discountPercentage / 100)) * item.quantity);
+    }, 0).toFixed(2);
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -71,19 +77,34 @@ const NavBar = () => {
             <div className="tsmalluserContents">
               <FiUser className='userIcon'/>
               <IoMdHeartEmpty className='wishlistIcon'/>
-              <IoMdCart className='cartIcon'/>  
-              {/* <div className="cartCount">
-                {cartItems.length}
-              </div> */}
+              <div className="cartCount">
+                <Link to='/shopping-cart'>
+                  <IoMdCart className='cartIcon'/>
+                </Link>
+                <div className="itemsNum">
+                  10
+                </div>
+                <div className="cartTotalPrice">
+                  $ {calculateTotalCost()}
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="tUserContainer">
             <FiUser className='userIcon'/>
             <IoMdHeartEmpty className='wishlistIcon'/>
-            <Link to='/shopping-cart'>
-              <IoMdCart className='cartIcon'/>
-            </Link>
+            <div className="cartCount">
+              <Link to='/shopping-cart'>
+                <IoMdCart className='cartIcon'/>
+              </Link>  
+              <div className="itemsNum">
+                10
+              </div>
+              <div className="cartTotalPrice">
+                $ {calculateTotalCost()}
+              </div>
+            </div>
           </div>
         </div>
         <div className="fourthBar">

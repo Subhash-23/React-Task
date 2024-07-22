@@ -138,8 +138,9 @@ input:focus {
 .thirdBar .tUserContainer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 20%;
+  height: 5em;
 }
 
 .userIcon, .wishlistIcon, .cartIcon {
@@ -152,16 +153,23 @@ input:focus {
   display: inline-flex;
 }
 
-/* .cartIcon {
-  font-size: 24px;
-  color: #333;
+.cartCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4em;
+  position: relative;
+  margin-top: 5px;
 }
 
-.cartCount {
+.cartTotalPrice {
+  font-weight: 500;
+}
+
+.cartCount .itemsNum {
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,9 +178,9 @@ input:focus {
   border-radius: 50%;
   color: #fff;
   background-color: red;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
-} */
+}
 
 .fourthBar {
   width: 100%;
@@ -320,6 +328,10 @@ footer {
 }
 
 @media (max-width: 850px) {
+  .thirdBar .tUserContainer {
+    justify-content: space-between;
+  }
+
   .thirdBar .tContactContainer {
     display: none;
   }
@@ -378,10 +390,6 @@ footer {
 .activebar1 {
   transform: rotate(-50deg) translate(-1px, 5px);
 }
-
-/* .menuIcon .activebar1, .menuIcon .activebar3 {
-  background-color: #fff;
-} */
 
 @media (max-width: 800px) {
   .fFirstBar {
@@ -470,7 +478,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 30%;
+    width: 40%;
+    height: 5em;
+    position: relative;
   }
   .thirdBar {
     height: auto;
